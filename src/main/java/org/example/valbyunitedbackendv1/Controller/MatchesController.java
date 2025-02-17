@@ -15,7 +15,7 @@ public class MatchesController {
     @Autowired
     private MatchesService matchesService;
 
-    @PostMapping("/fetch-and-save")
+    @PostMapping("/fetch-and-saves")
     public ResponseEntity<String> fetchAndSaveMatches() {
         try {
             matchesService.fetchAndSaveMatches();
