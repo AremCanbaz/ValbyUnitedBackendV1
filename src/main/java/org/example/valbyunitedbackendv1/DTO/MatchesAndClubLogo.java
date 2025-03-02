@@ -1,12 +1,14 @@
 package org.example.valbyunitedbackendv1.DTO;
 
+import java.time.LocalDateTime;
+
 public class MatchesAndClubLogo {
     private Long id;
-    private String matchDateTime;
+    private LocalDateTime matchDateTime;
 
     public MatchesAndClubLogo(Long matchId, String matchDateTime, int roundNo, String homeTeamName, String homeTeamLogo, int homeTeamScore, String awayTeamName, String awayTeamLogoUrl, int awayTeamScore, String stadiumName) {
         this.id = matchId;
-        this.matchDateTime = matchDateTime;
+        this.matchDateTime = LocalDateTime.parse(matchDateTime);
         this.roundNo = roundNo;
         this.homeTeamName = homeTeamName;
         this.homeTeamLogo = homeTeamLogo;
@@ -75,11 +77,11 @@ public class MatchesAndClubLogo {
 
     private String awayTeamLogo;
 
-    public String getMatchDateTime() {
+    public LocalDateTime getMatchDateTime() {
         return matchDateTime;
     }
 
-    public void setMatchDateTime(String matchDateTime) {
+    public void setMatchDateTime(LocalDateTime matchDateTime) {
         this.matchDateTime = matchDateTime;
     }
 

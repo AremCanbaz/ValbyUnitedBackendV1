@@ -2,10 +2,10 @@ package org.example.valbyunitedbackendv1.Controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.valbyunitedbackendv1.DTO.MatchesAndClubLogo;
-import org.example.valbyunitedbackendv1.Entity.ClubLogo;
+
 import org.example.valbyunitedbackendv1.Entity.Matches;
 import org.example.valbyunitedbackendv1.Entity.Pool;
-import org.example.valbyunitedbackendv1.Repository.ClubLogoRepository;
+
 import org.example.valbyunitedbackendv1.Repository.MatchRepository;
 import org.example.valbyunitedbackendv1.Repository.PoolRepository;
 import org.example.valbyunitedbackendv1.Service.MatchService;
@@ -101,5 +101,10 @@ public class MatchController {
     @GetMapping("/matcheswithlogo")
     public List<MatchesAndClubLogo> getAllClubLogos() {
         return matchService.getMatchesAndClubLogos();
+    }
+
+    @GetMapping("/upcomingmatches")
+    public List<MatchesAndClubLogo> getUpcomingMatches() {
+        return matchService.getupcomingMatches();
     }
 }

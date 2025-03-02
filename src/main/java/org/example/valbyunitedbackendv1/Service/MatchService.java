@@ -38,7 +38,30 @@ public class MatchService {
         }
         return matchesAndClubLogos;
     }
+    public List<MatchesAndClubLogo> getupcomingMatches() {
+            List<Object[]> results = matchRepository.upcomingMatches();
+            List<MatchesAndClubLogo> upcomingMatches = new ArrayList<>();
 
-}
+            for (Object[] result : results) {
+                Long matchId = (Long) result[0];
+                String matchDateTime = (String) result[1];
+                int roundNo = (int) result[2];
+                String homeTeamName = (String) result[3];
+                String homeTeamLogo = (String) result[4];
+                int homeTeamScore = (int) result[5];
+                String awayTeamName = (String) result[6];
+                String awayTeamLogo = (String) result[7];
+                int awayTeamScore = (int) result[8];
+                String stadiumName = (String) result[9];
+
+                MatchesAndClubLogo match = new MatchesAndClubLogo(matchId, matchDateTime, roundNo, homeTeamName, homeTeamLogo,
+                        homeTeamScore, awayTeamName, awayTeamLogo, awayTeamScore, stadiumName);
+                upcomingMatches.add(match);
+            }
+
+            return upcomingMatches;
+        }
+    }
+
 
 
