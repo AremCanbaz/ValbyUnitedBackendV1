@@ -19,6 +19,7 @@ import java.util.Map;
 
 // Controller
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/api")
 public class MatchController {
 
