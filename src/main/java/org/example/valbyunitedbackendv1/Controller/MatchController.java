@@ -108,4 +108,8 @@ public class MatchController {
     public List<MatchesAndClubLogo> getUpcomingMatches() {
         return matchService.getupcomingMatches();
     }
+    @GetMapping("/latestmatch")
+    public List<MatchesAndClubLogo> getLatestMatches() {
+        return matchService.getlatestMatch();
+    }
 }
